@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+body {
+  margin:0;
+  font-family: Arial;
+  background: #f5f5f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section {
+  padding: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+  font-size: 40px;
+}
+div {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  background: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;/* removes bullets */
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a {
+  color: white;
+  text-decoration: none;/* removes underline */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background: black;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
 }
