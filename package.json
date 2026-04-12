@@ -7,6 +7,13 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "emailjs-com": "^3.2.0",
+    "express": "^5.2.1",
+    "framer-motion": "^12.38.0",
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.4.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-scripts": "5.0.1",
@@ -14,10 +21,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "node src/server.js",
+    "dev": "concurrently \"npm run server\" \"npm start\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -35,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

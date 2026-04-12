@@ -1,6 +1,12 @@
+import { useState } from "react";
 function Navbar() {
+   const [dark, setDark] = useState(false);
+
     return (
-    <nav>
+      <nav className={dark ? "dark" : ""}>
+      <button onClick={() => setDark(!dark)}>
+        {dark ? "☀️" : "🌙"}
+      </button>
       <h2>Aishwarya</h2>
       <ul>
         <li><a href="#home">Home</a></li>
