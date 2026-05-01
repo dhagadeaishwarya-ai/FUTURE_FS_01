@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+const API_URL = "https://portfolio-backend-2zar.onrender.com/";
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -18,7 +18,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const res = await fetch("/contact", {
+      const res = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

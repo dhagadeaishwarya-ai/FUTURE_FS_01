@@ -8,7 +8,10 @@ const Message = require("./src/models/Message");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://future-fs-01-kios.vercel.app"
+}));
+
 app.use(express.json());
 
 // MongoDB Connection
