@@ -1,5 +1,5 @@
 import { useState } from "react";
-const API_URL = "https://portfolio-backend-2zar.onrender.com/";
+const API_URL = "https://portfolio-backend-2zar.onrender.com";
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
