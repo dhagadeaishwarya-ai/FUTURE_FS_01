@@ -17,21 +17,28 @@ export default function Contact() {
   const sendMessage = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(form) // ✅ correct data
-    });
+    try {
+      const res = await fetch("/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.success) {
+      if (!res.ok || !data.success) {
+        const message = data?.error || "Failed to send";
+        alert(message);
+        return;
+      }
+
       alert("Message saved!");
       setForm({ name: "", email: "", message: "" });
-    } else {
-      alert("Failed to send");
+    } catch (err) {
+      console.error("Contact submit failed:", err);
+      alert("Server error ❌");
     }
   };
 
